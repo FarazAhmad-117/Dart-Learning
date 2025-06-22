@@ -6,4 +6,11 @@ void main() {
   // What if we multiply
   // print('2' * '4');
   print('2' * 4);
+
+  /*
+  
+  A multi line comment
+  in DART
+  
+  */
 }
