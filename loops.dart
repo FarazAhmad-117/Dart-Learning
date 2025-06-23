@@ -1,7 +1,7 @@
 // Here in this file I will be dealing with all types of loops in dart
 void main() {
-  int n = 10;
-  int m = 5;
+  // int n = 10;
+  // int m = 5;
   // FOR LOOP
   // for (int i = 0; i < n; i++) {
   //   print('${m} x ${i + 1} = ${m * (i + 1)}');
