@@ -10,7 +10,7 @@ void main() async {
   print(result2);
 
   final data = await getData("https://jsonplaceholder.typicode.com/users");
-  print(data);
+  printPrettyJson(data);
 }
 
 Future<String> getResult() async {
@@ -30,4 +30,9 @@ Future<dynamic> getData(url) async {
   } catch (e) {
     print(e);
   }
+}
+
+void printPrettyJson(dynamic data) {
+  const encoder = JsonEncoder.withIndent('  ');
+  print(encoder.convert(data));
 }
