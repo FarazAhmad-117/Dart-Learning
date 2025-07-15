@@ -3,14 +3,16 @@ import 'dart:io';
 
 void main() async {
   // Futures (Promises)
-  final result = await getResult();
-  print(result);
+  // final result = await getResult();
+  // print(result);
 
-  final result2 = await getResult2();
-  print(result2);
+  // final result2 = await getResult2();
+  // print(result2);
 
-  final data = await getData("https://jsonplaceholder.typicode.com/users");
-  printPrettyJson(data);
+  // final data = await getData("https://jsonplaceholder.typicode.com/users");
+  // printPrettyJson(data);
+
+  getData("https://jsonplaceholder.typicode.com/users").then((data) => printPrettyJson(data));
 }
 
 Future<String> getResult() async {
@@ -21,8 +23,8 @@ Future<String> getResult() async {
 Future<String> getResult2() => Future.delayed(Duration(seconds: 2), () => "Result3");
 
 Future<dynamic> getData(url) async {
-  final httpClient = HttpClient();
   try {
+    final httpClient = HttpClient();
     final request = await httpClient.getUrl(Uri.parse(url));
     final response = await request.close();
     final json = await response.transform(utf8.decoder).join();
